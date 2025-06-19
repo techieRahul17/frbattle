@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+/* Custom animations */
+@keyframes gradient-x {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-delay {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-delay-2 {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 3s ease infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in-delay 1s ease-out 0.3s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in-delay-2 1s ease-out 0.6s both;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #6b7280;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background: rgba(59, 130, 246, 0.4);
+  pointer-events: none;
+  z-index: 10;
+}
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Professional 3D Striker Ball Styles */
+.striking-ball-pro {
+  width: 64px;
+  height: 64px;
+  background: radial-gradient(circle at 30% 30%, #3b82f6 70%, #06b6d4 100%);
+  border-radius: 50%;
+  box-shadow: 0 8px 32px 0 #06b6d4aa, 0 0 16px 4px #38bdf8cc;
+  animation: bounce-strike 1.2s cubic-bezier(.68,-0.55,.27,1.55) infinite;
+  position: relative;
+  z-index: 10;
+  border: 2px solid #e0e7ef;
+}
+.dark .striking-ball-pro {
+  background: radial-gradient(circle at 30% 30%, #38bdf8 70%, #2563eb 100%);
+  box-shadow: 0 8px 32px 0 #2563ebcc, 0 0 24px 8px #06b6d4cc;
+  border: 2px solid #0f172a;
+}
+.striking.striking-ball-pro {
+  animation: bounce-strike 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+/* Parallax effect */
+.parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Loading animation */
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 3D Striker Ball Styles */
+.striking-ball-3d {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #1e3a8a 70%, #fbbf24 100%);
+  box-shadow: 0 8px 32px 0 #1e3a8a55, 0 0 24px 8px #fbbf24cc;
+  position: relative;
+  transition: transform 0.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.dark .striking-ball-3d {
+  background: radial-gradient(circle at 30% 30%, #38bdf8 70%, #fbbf24 100%);
+  box-shadow: 0 8px 32px 0 #38bdf855, 0 0 24px 8px #fbbf24cc;
+}
+.striking-ball-3d .shine {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  filter: blur(2px);
+  opacity: 0.7;
+}
+.striking-ball-3d .shadow {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 32px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(30,41,59,0.25);
+  filter: blur(2px);
+  opacity: 0.5;
+}
